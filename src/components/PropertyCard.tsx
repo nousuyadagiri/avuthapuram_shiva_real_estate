@@ -32,7 +32,10 @@ export function PropertyCard({ property }: { property: Property }) {
 
   return (
     <article className="group flex flex-col border border-[#E3DED4] bg-[#FFFFFF] transition-colors hover:border-[#C6A46C]">
-      <Link href={`/properties/${property.slug}`} className="relative block aspect-[4/3] overflow-hidden bg-[#292929]">
+      <Link
+        href={`/properties/${property.slug}`}
+        className="relative block aspect-[4/3] overflow-hidden bg-[#292929]"
+      >
         <Image
           src={coverImage.url}
           alt={coverImage.alt}
@@ -55,6 +58,13 @@ export function PropertyCard({ property }: { property: Property }) {
             </span>
           )}
         </div>
+        {property.images.length > 1 && (
+          <div className="absolute inset-x-0 bottom-0 flex justify-end p-3">
+            <span className="bg-[#111111]/85 px-2.5 py-1 text-[11px] font-medium tracking-[0.12em] text-[#FFFFFF] uppercase">
+              {property.images.length} Photos
+            </span>
+          </div>
+        )}
       </Link>
 
       <div className="flex flex-1 flex-col justify-between p-6">
@@ -65,7 +75,7 @@ export function PropertyCard({ property }: { property: Property }) {
           <h3 className="mt-2 font-serif text-2xl font-medium leading-snug text-[#111111]">
             <Link
               href={`/properties/${property.slug}`}
-              className="hover:text-[#8A672E] transition-colors"
+              className="transition-colors hover:text-[#8A672E]"
             >
               {property.title}
             </Link>
@@ -111,4 +121,3 @@ export function PropertyCard({ property }: { property: Property }) {
     </article>
   );
 }
-

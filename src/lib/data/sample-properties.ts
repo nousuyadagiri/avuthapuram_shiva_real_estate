@@ -34,6 +34,18 @@ export const SAMPLE_PROPERTIES: Property[] = [
         alt: "Sample residential land enclave entrance with stone pillars and avenue trees in Telangana",
       },
       {
+        url: "/images/janaharsha-hero.jpeg",
+        alt: "Aerial golden-hour view of expansive open residential plot layout and approach roads",
+      },
+      {
+        url: "/images/janaharsha-sector-road.jpg",
+        alt: "Sample wide blacktop sector road with avenue plantation and demarcated open plots near Ibrahimpatnam",
+      },
+      {
+        url: "/images/janaharsha-open-plots.jpg",
+        alt: "Sample elevated view of levelled open residential plots and internal BT roads in Telangana",
+      },
+      {
         url: "/images/hero-estate.jpg",
         alt: "Sample aerial view of demarcated open residential land parcels at golden hour",
       },
@@ -121,6 +133,18 @@ export const SAMPLE_PROPERTIES: Property[] = [
         alt: "Sample panoramic view of residential open land parcel along Telangana growth corridor",
       },
       {
+        url: "/images/janaharsha-hero.jpeg",
+        alt: "Aerial golden-hour overview of green open residential land sectors and internal roads",
+      },
+      {
+        url: "/images/janaharsha-open-plots.jpg",
+        alt: "Sample elevated view of open residential plot blocks and blacktop sector roads in Ibrahimpatnam",
+      },
+      {
+        url: "/images/janaharsha-sector-road.jpg",
+        alt: "Sample wide blacktop venture road with landscaped median and boundary pegs in Telangana",
+      },
+      {
         url: "/images/hero-estate.jpg",
         alt: "Sample residential open plot estate overview",
       },
@@ -130,5 +154,128 @@ export const SAMPLE_PROPERTIES: Property[] = [
     isPublished: true,
     createdAt: "2026-01-03T00:00:00.000Z",
     updatedAt: "2026-01-03T00:00:00.000Z",
+  },
+  {
+    id: "sample-janaharsha-aerial-04",
+    slug: "sample-aerial-plot-layout-janaharsha-dream-city",
+    title: "Sample Aerial Layout Plot — Janaharsha Dream City",
+    subtitle: "Illustrative aerial layout preview showcasing expansive open residential sectors",
+    locationArea: "Janaharsha Dream City, Ibrahimpatnam",
+    locality: "Ibrahimpatnam, Janaharsha Dream City",
+    state: "Telangana",
+    propertyType: "Residential Open Plot",
+    plotDimensions: "30 ft x 50 ft (Indicative Sample)",
+    areaSqYards: 167,
+    facing: "East (Sample Spec)",
+    roadWidth: "40 ft Internal BT Road (Sample Spec)",
+    priceInr: null,
+    priceDisplay: null,
+    status: "Available",
+    documentationSummary:
+      "Sample placeholder: Actual layout approvals, link documents, and plot numbers are verified independently before publishing verified inventory.",
+    description:
+      "Clearly marked sample listing featuring the aerial open-plot township perspective for Janaharsha Dream City in the Ibrahimpatnam region of Telangana.",
+    highlights: [
+      "Sample listing demonstrating aerial sector overview",
+      "Connected road network across open residential blocks",
+      "Transparent documentation review prior to purchase",
+    ],
+    images: [
+      {
+        url: "/images/janaharsha-hero.jpeg",
+        alt: "Aerial golden-hour view of expansive open residential plot layout and approach roads",
+      },
+      {
+        url: "/images/janaharsha-sector-road.jpg",
+        alt: "Wide blacktop sector road with avenue plantation and demarcated open plots",
+      },
+    ],
+    isFeatured: true,
+    isSample: true,
+    isPublished: true,
+    createdAt: "2026-01-04T00:00:00.000Z",
+    updatedAt: "2026-01-04T00:00:00.000Z",
+  },
+  {
+    id: "sample-janaharsha-sector-road-05",
+    slug: "sample-sector-road-plot-janaharsha-dream-city",
+    title: "Sample Sector Road Plot — Janaharsha Dream City",
+    subtitle: "Illustrative 80 ft avenue-facing residential open plot preview",
+    locationArea: "Janaharsha Dream City, Ibrahimpatnam",
+    locality: "Ibrahimpatnam, Janaharsha Dream City",
+    state: "Telangana",
+    propertyType: "Residential Open Plot",
+    plotDimensions: "40 ft x 54 ft (Indicative Sample)",
+    areaSqYards: 240,
+    facing: "West (Sample Spec)",
+    roadWidth: "80 ft Sector BT Road (Sample Spec)",
+    priceInr: null,
+    priceDisplay: null,
+    status: "Available",
+    documentationSummary:
+      "Sample placeholder: Survey boundaries, EC, and title documents are verified and shared only for live client inventory.",
+    description:
+      "Clearly marked sample entry illustrating wide blacktop sector road frontage and landscaped avenue layout in the Ibrahimpatnam, Telangana residential corridor.",
+    highlights: [
+      "Sample listing showcasing wide blacktop sector road frontage",
+      "Avenue plantation and demarcated residential plot markers",
+      "Guided site visit coordination available",
+    ],
+    images: [
+      {
+        url: "/images/janaharsha-sector-road.jpg",
+        alt: "Wide blacktop sector road with landscaped median and demarcated residential plots in Ibrahimpatnam",
+      },
+      {
+        url: "/images/janaharsha-open-plots.jpg",
+        alt: "Elevated view of levelled residential open plots and intersecting BT roads",
+      },
+    ],
+    isFeatured: true,
+    isSample: true,
+    isPublished: true,
+    createdAt: "2026-01-05T00:00:00.000Z",
+    updatedAt: "2026-01-05T00:00:00.000Z",
+  },
+  {
+    id: "sample-janaharsha-township-06",
+    slug: "sample-township-open-plot-ibrahimpatnam",
+    title: "Sample Township Open Plot — Ibrahimpatnam",
+    subtitle: "Illustrative levelled residential plot block preview",
+    locationArea: "Ibrahimpatnam",
+    locality: "Ibrahimpatnam, Janaharsha Dream City",
+    state: "Telangana",
+    propertyType: "Residential Open Plot",
+    plotDimensions: "45 ft x 60 ft (Indicative Sample)",
+    areaSqYards: 300,
+    facing: "North-East (Sample Spec)",
+    roadWidth: "40 ft Blacktop Road (Sample Spec)",
+    priceInr: null,
+    priceDisplay: null,
+    status: "Limited Availability",
+    documentationSummary:
+      "Sample placeholder: Original link documents and layout status are verified independently per plot.",
+    description:
+      "Clearly marked sample entry illustrating levelled open residential plots with concrete curbing and stone boundary pegs in Ibrahimpatnam, Telangana.",
+    highlights: [
+      "Sample listing showcasing levelled residential plot blocks",
+      "Concrete curbing and stone corner demarcation",
+      "Direct WhatsApp and click-to-call advisory",
+    ],
+    images: [
+      {
+        url: "/images/janaharsha-open-plots.jpg",
+        alt: "Elevated view of levelled open plots with stone boundary markers and BT roads in Ibrahimpatnam",
+      },
+      {
+        url: "/images/janaharsha-hero.jpeg",
+        alt: "Aerial golden-hour overview of green open residential land sectors",
+      },
+    ],
+    isFeatured: true,
+    isSample: true,
+    isPublished: true,
+    createdAt: "2026-01-06T00:00:00.000Z",
+    updatedAt: "2026-01-06T00:00:00.000Z",
   },
 ];

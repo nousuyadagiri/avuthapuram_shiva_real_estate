@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 
 async function FeaturedPropertiesGrid() {
   const { properties, mode } = await getPublishedProperties();
-  const featured = properties.filter((p) => p.isFeatured).slice(0, 3);
-  const displayList = featured.length > 0 ? featured : properties.slice(0, 3);
+  const featured = properties.filter((p) => p.isFeatured).slice(0, 6);
+  const displayList = featured.length > 0 ? featured : properties.slice(0, 6);
   const hasSample = displayList.some((p) => p.isSample);
 
   return (
@@ -436,7 +436,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-6">
+          <div className="space-y-4 lg:col-span-6">
             <div className="relative aspect-[4/3] overflow-hidden border border-[#292929]">
               <Image
                 src="/images/plot-corridor.jpg"
@@ -446,6 +446,38 @@ export default function HomePage() {
                 loading="lazy"
                 className="object-cover"
               />
+            </div>
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#292929]">
+                <Image
+                  src="/images/janaharsha-hero.jpeg"
+                  alt="Aerial golden-hour view of expansive open residential plot layout and connecting roads toward Hyderabad"
+                  fill
+                  sizes="(max-width: 1024px) 33vw, 17vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#292929]">
+                <Image
+                  src="/images/janaharsha-sector-road.jpg"
+                  alt="Wide blacktop sector road with avenue plantation and demarcated residential plots in Ibrahimpatnam"
+                  fill
+                  sizes="(max-width: 1024px) 33vw, 17vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#292929]">
+                <Image
+                  src="/images/janaharsha-open-plots.jpg"
+                  alt="Elevated view of levelled open plots with stone boundary markers and BT roads near Janaharsha Dream City"
+                  fill
+                  sizes="(max-width: 1024px) 33vw, 17vw"
+                  loading="lazy"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
