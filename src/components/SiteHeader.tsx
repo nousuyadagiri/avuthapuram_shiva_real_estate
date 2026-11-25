@@ -23,6 +23,7 @@ export function SiteHeader() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const sheetRef = useRef<HTMLElement>(null);
   const openBtnRef = useRef<HTMLButtonElement>(null);
+  const hasBeenVisibleRef = useRef(false);
 
   const isCurrent = useCallback(
     (href: string) => {
@@ -57,6 +58,8 @@ export function SiteHeader() {
     const scroller = scrollerRef.current;
     if (!dialog || !scroller) return;
 
+    hasBeenVisibleRef.current = false;
+
     if (!dialog.open) {
       dialog.showModal();
     }
@@ -68,7 +71,8 @@ export function SiteHeader() {
       );
     }
 
-    scroller.scrollTo({ left: scroller.scrollWidth, behavior: "auto" });
+    const targetLeft = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+    scroller.scrollTo({ left: targetLeft, behavior: "auto" });
     setDrawerOpen(true);
   }, []);
 
@@ -84,7 +88,15 @@ export function SiteHeader() {
       (entries) => {
         const entry = entries.at(-1);
         if (!entry) return;
-        if (entry.intersectionRatio < visibleThreshold && dialog.open) {
+        if (entry.intersectionRatio >= visibleThreshold && dialog.open) {
+          hasBeenVisibleRef.current = true;
+        }
+        if (
+          hasBeenVisibleRef.current &&
+          entry.intersectionRatio < visibleThreshold &&
+          dialog.open
+        ) {
+          hasBeenVisibleRef.current = false;
           dialog.close();
           setDrawerOpen(false);
         } else if (entry.intersectionRatio >= 0.99 && dialog.open) {
@@ -211,23 +223,27 @@ export function SiteHeader() {
         ref={dialogRef}
         id="mobile-navigation-drawer"
         aria-label="Mobile navigation"
-        className="as-drawer lg:hidden"
+        className="as-drawer fixed inset-0 m-0 h-dvh w-screen max-w-none max-h-none border-0 bg-transparent p-0 lg:hidden"
         onClick={(event) => {
           if (sheetRef.current && !sheetRef.current.contains(event.target as Node)) {
             closeDrawer();
           }
         }}
       >
-        <div ref={scrollerRef} className="as-drawer-scroller">
-          <nav ref={sheetRef} aria-label="Mobile primary" className="as-drawer-sheet">
-            <div className="flex items-center justify-between border-b border-[#292929] px-6 py-5">
+        <div ref={scrollerRef} className="as-drawer-scroller h-full w-full">
+          <nav
+            ref={sheetRef}
+            aria-label="Mobile primary"
+            className="as-drawer-sheet h-full bg-[#111111] text-[#FFFFFF]"
+          >
+            <div className="flex items-center justify-between border-b border-[#292929] bg-[#111111] px-6 py-5">
               <BrandLogo variant="dark" compact />
               <button
                 type="button"
                 onClick={closeDrawer}
                 aria-label="Close navigation menu"
                 autoFocus
-                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-[#292929] text-[#F8F7F4] transition-colors hover:border-[#C6A46C]"
+                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-[#292929] bg-[#111111] text-[#FFFFFF] transition-colors hover:border-[#C6A46C] hover:text-[#C6A46C]"
               >
                 <X className="h-5 w-5" aria-hidden="true" />
               </button>

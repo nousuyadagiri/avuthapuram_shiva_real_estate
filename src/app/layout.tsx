@@ -74,9 +74,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-IN"
+      suppressHydrationWarning
       className={`${cormorant.variable} ${jakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F8F7F4] text-[#111111]">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-[#F8F7F4] text-[#111111]"
+      >
         <a
           href="#main-content"
           className="visually-hidden focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-[#111111] focus:text-[#FFFFFF] focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:border focus:border-[#C6A46C]"

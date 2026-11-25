@@ -85,20 +85,28 @@ body {
   display: flex;
 }
 
+/* Top-level registered custom property for smooth drawer backdrop interpolation */
+@property --drawer-backdrop {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
 /* Native <dialog> scroll-snap mobile navigation drawer */
 .as-drawer {
   --drawer-width: min(22rem, 85dvw, 100dvw - 24px);
-  --drawer-backdrop: 0;
+  --drawer-backdrop: 1;
+  position: fixed;
   inset: 0;
-  width: auto;
-  height: auto;
+  width: 100dvw;
+  height: 100dvh;
   max-width: none;
   max-height: none;
   margin: 0;
   padding: 0;
   background: transparent;
   border: 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .as-drawer::backdrop {
@@ -110,7 +118,10 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: 100% var(--drawer-width);
+  width: 100%;
+  height: 100%;
   overflow-x: scroll;
+  overflow-y: hidden;
   overscroll-behavior: none;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
@@ -129,6 +140,9 @@ body {
 /* Closed stop spacer on the left so the right-side drawer slides in smoothly */
 .as-drawer-scroller::before {
   content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
   scroll-snap-align: start;
   scroll-initial-target: nearest;
 }
@@ -136,7 +150,9 @@ body {
 .as-drawer-sheet {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100svh;
+  width: var(--drawer-width);
+  height: 100dvh;
+  min-height: 100svh;
   background-color: #111111;
   color: #ffffff;
   overflow-y: auto;
@@ -154,12 +170,6 @@ body {
 
   .as-drawer-scroller {
     scroll-timeline: --as-drawer-fade x;
-  }
-
-  @property --drawer-backdrop {
-    syntax: "<number>";
-    inherits: true;
-    initial-value: 0;
   }
 
   @keyframes as-fade-drawer-backdrop {
