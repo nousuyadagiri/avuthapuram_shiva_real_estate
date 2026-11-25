@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "About Us | Founder Avuthapuram Shiva",
   description:
-    "Learn about AVUTHAPURAM SHIVA REAL ESTATE, founded by Avuthapuram Shiva in Ibrahimpatnam, Janardhan, Telangana—specializing in open plot buying, selling, and residential land properties.",
+    "Learn about AVUTHAPURAM SHIVA REAL ESTATE, founded by Avuthapuram Shiva in Ibrahimpatnam, Janaharsha Dream City, Telangana—specializing in open plot buying, selling, and residential land properties.",
   alternates: {
     canonical: "/about",
   },
@@ -33,8 +33,9 @@ export default function AboutPage() {
             About AVUTHAPURAM SHIVA REAL ESTATE
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#D4CFC5]">
-            A focused residential land advisory in Ibrahimpatnam, Janardhan, Telangana, built
-            around honest property representation and long-term land security.
+            A focused residential land advisory in Ibrahimpatnam, Janaharsha
+            Dream City, Telangana, built around honest property representation
+            and long-term land security.
           </p>
         </div>
       </section>
@@ -61,16 +62,18 @@ export default function AboutPage() {
               Focused Exclusively on Open Plots &amp; Residential Land
             </h2>
             <p className="text-sm leading-relaxed text-[#292929] sm:text-base">
-              AVUTHAPURAM SHIVA REAL ESTATE operates out of {siteConfig.location.displayLine}. Unlike
-              generalist brokerages that split attention across commercial leases and high-rise
-              resales, our practice is dedicated to open plot buying, open plot selling, and
-              residential land properties across Ibrahimpatnam and the wider Hyderabad region in
-              Telangana.
+              AVUTHAPURAM SHIVA REAL ESTATE operates out of{" "}
+              {siteConfig.location.displayLine}. Unlike generalist brokerages
+              that split attention across commercial leases and high-rise
+              resales, our practice is dedicated to open plot buying, open plot
+              selling, and residential land properties across Ibrahimpatnam and
+              the wider Hyderabad region in Telangana.
             </p>
             <p className="text-sm leading-relaxed text-[#57534E] sm:text-base">
-              Land is a foundational family asset. Every client engagement is structured around
-              clear parcel specifications, physical site inspections, and verified documentation
-              review before any commitment is made.
+              Land is a foundational family asset. Every client engagement is
+              structured around clear parcel specifications, physical site
+              inspections, and verified documentation review before any
+              commitment is made.
             </p>
           </div>
         </div>
@@ -87,22 +90,27 @@ export default function AboutPage() {
                 Founder: {siteConfig.founder}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-[#57534E] sm:text-base">
-                AVUTHAPURAM SHIVA REAL ESTATE was established by {siteConfig.founder} with a straightforward
-                mandate: bring corporate clarity, respectful client communication, and factual
-                diligence to residential open plot transactions in Ibrahimpatnam and Janardhan.
+                AVUTHAPURAM SHIVA REAL ESTATE was established by{" "}
+                {siteConfig.founder} with a straightforward mandate: bring
+                corporate clarity, respectful client communication, and factual
+                diligence to residential open plot transactions in Ibrahimpatnam
+                and Janaharsha Dream City.
               </p>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:col-span-7">
               <div className="border border-[#E3DED4] bg-[#F8F7F4] p-7">
-                <Compass className="h-5 w-5 text-[#8A672E]" aria-hidden="true" />
+                <Compass
+                  className="h-5 w-5 text-[#8A672E]"
+                  aria-hidden="true"
+                />
                 <h3 className="mt-4 font-serif text-2xl font-medium text-[#111111]">
                   Our Vision
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#57534E]">
-                  To be the most trusted corporate reference for open plots in Ibrahimpatnam and
-                  residential land across Telangana—recognized for factual transparency and
-                  unhurried client advisory.
+                  To be the most trusted corporate reference for open plots in
+                  Ibrahimpatnam and residential land across Telangana—recognized
+                  for factual transparency and unhurried client advisory.
                 </p>
               </div>
 
@@ -112,22 +120,27 @@ export default function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#57534E]">
-                  To connect open plot buyers and landowners through structured parcel
-                  information, accompanied site visits, and clear documentation checks without
-                  inflated claims.
+                  To connect open plot buyers and landowners through structured
+                  parcel information, accompanied site visits, and clear
+                  documentation checks without inflated claims.
                 </p>
               </div>
 
               <div className="border border-[#E3DED4] bg-[#F8F7F4] p-7 sm:col-span-2">
-                <ShieldCheck className="h-5 w-5 text-[#8A672E]" aria-hidden="true" />
+                <ShieldCheck
+                  className="h-5 w-5 text-[#8A672E]"
+                  aria-hidden="true"
+                />
                 <h3 className="mt-4 font-serif text-2xl font-medium text-[#111111]">
                   Business Accuracy Commitment
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#57534E]">
-                  AVUTHAPURAM SHIVA REAL ESTATE publishes verified plot prices, approvals, and statutory
-                  records only when formally supplied and confirmed for a property. Sample entries
-                  during site setup are always explicitly labeled, and street-level office address
-                  details in Ibrahimpatnam, Janardhan remain clearly noted until finalized.
+                  AVUTHAPURAM SHIVA REAL ESTATE publishes verified plot prices,
+                  approvals, and statutory records only when formally supplied
+                  and confirmed for a property. Sample entries during site setup
+                  are always explicitly labeled, and street-level office address
+                  details in Ibrahimpatnam, Janaharsha Dream City remain clearly
+                  noted until finalized.
                 </p>
               </div>
             </div>
@@ -142,7 +155,8 @@ export default function AboutPage() {
               Ready to discuss a plot requirement in Telangana?
             </h2>
             <p className="mt-2 text-sm text-[#D4CFC5]">
-              Connect with AVUTHAPURAM SHIVA REAL ESTATE for buying, selling, or site visit coordination.
+              Connect with AVUTHAPURAM SHIVA REAL ESTATE for buying, selling, or
+              site visit coordination.
             </p>
           </div>
           <Link
@@ -157,4 +171,3 @@ export default function AboutPage() {
     </>
   );
 }
-

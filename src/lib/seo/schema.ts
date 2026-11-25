@@ -18,7 +18,7 @@ export function getOrganizationSchema() {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Ibrahimpatnam, Janardhan",
+      addressLocality: "Ibrahimpatnam, Janaharsha Dream City",
       addressRegion: "Telangana",
       addressCountry: "IN",
     },
@@ -43,7 +43,7 @@ export function getRealEstateAgentSchema() {
       },
       {
         "@type": "Place",
-        name: "Janardhan, Ibrahimpatnam, Telangana, India",
+        name: "Janaharsha Dream City, Ibrahimpatnam, Telangana, India",
       },
       {
         "@type": "Place",
@@ -52,7 +52,7 @@ export function getRealEstateAgentSchema() {
     ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Ibrahimpatnam, Janardhan",
+      addressLocality: "Ibrahimpatnam, Janaharsha Dream City",
       addressRegion: "Telangana",
       addressCountry: "IN",
     },
@@ -81,4 +81,3 @@ export function getBreadcrumbSchema(items: BreadcrumbItem[]) {
     })),
   };
 }
-

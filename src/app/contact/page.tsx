@@ -7,7 +7,7 @@ import { getTelHref, getWhatsAppHref, siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Contact AVUTHAPURAM SHIVA REAL ESTATE | Ibrahimpatnam, Telangana",
   description:
-    "Contact AVUTHAPURAM SHIVA REAL ESTATE in Ibrahimpatnam, Janardhan, Telangana for open plot buying, open plot selling, property information, and guided site visits.",
+    "Contact AVUTHAPURAM SHIVA REAL ESTATE in Ibrahimpatnam, Janaharsha Dream City, Telangana for open plot buying, open plot selling, property information, and guided site visits.",
   alternates: {
     canonical: "/contact",
   },
@@ -32,9 +32,9 @@ export default function ContactPage() {
             Contact AVUTHAPURAM SHIVA REAL ESTATE
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#D4CFC5]">
-            Connect with {siteConfig.founder}&apos;s advisory team for open plot enquiries,
-            seller representations, and coordinated site visits in Ibrahimpatnam and Janardhan,
-            Telangana.
+            Connect with {siteConfig.founder}&apos;s advisory team for open plot
+            enquiries, seller representations, and coordinated site visits in
+            Ibrahimpatnam and Janaharsha Dream City, Telangana.
           </p>
         </div>
       </section>
@@ -52,27 +52,40 @@ export default function ContactPage() {
 
               <dl className="mt-6 space-y-6 text-sm">
                 <div className="flex items-start gap-4">
-                  <UserCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]" aria-hidden="true" />
+                  <UserCheck
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]"
+                    aria-hidden="true"
+                  />
                   <div>
                     <dt className="text-xs font-semibold tracking-[0.14em] text-[#57534E] uppercase">
                       Founder
                     </dt>
-                    <dd className="mt-1 font-medium text-[#111111]">{siteConfig.founder}</dd>
+                    <dd className="mt-1 font-medium text-[#111111]">
+                      {siteConfig.founder}
+                    </dd>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]" aria-hidden="true" />
+                  <MapPin
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]"
+                    aria-hidden="true"
+                  />
                   <div>
                     <dt className="text-xs font-semibold tracking-[0.14em] text-[#57534E] uppercase">
                       Location
                     </dt>
-                    <dd className="mt-1 text-[#111111]">{siteConfig.location.addressNote}</dd>
+                    <dd className="mt-1 text-[#111111]">
+                      {siteConfig.location.addressNote}
+                    </dd>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Phone className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]" aria-hidden="true" />
+                  <Phone
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]"
+                    aria-hidden="true"
+                  />
                   <div>
                     <dt className="text-xs font-semibold tracking-[0.14em] text-[#57534E] uppercase">
                       Phone (Click to Call)
@@ -123,7 +136,10 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Mail className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]" aria-hidden="true" />
+                  <Mail
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[#8A672E]"
+                    aria-hidden="true"
+                  />
                   <div>
                     <dt className="text-xs font-semibold tracking-[0.14em] text-[#57534E] uppercase">
                       Email
@@ -155,4 +171,3 @@ export default function ContactPage() {
     </>
   );
 }
-

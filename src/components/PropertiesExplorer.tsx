@@ -10,7 +10,10 @@ interface PropertiesExplorerProps {
   mode: "supabase" | "preview";
 }
 
-export function PropertiesExplorer({ properties, mode }: PropertiesExplorerProps) {
+export function PropertiesExplorer({
+  properties,
+  mode,
+}: PropertiesExplorerProps) {
   const [query, setQuery] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -86,10 +89,11 @@ export function PropertiesExplorer({ properties, mode }: PropertiesExplorerProps
             Important Notice — Sample Development Listings
           </p>
           <p className="mt-1 text-xs leading-relaxed text-[#57534E] sm:text-sm">
-            Entries marked &ldquo;Sample Listing&rdquo; are illustrative placeholders used
-            during development. AVUTHAPURAM SHIVA REAL ESTATE does not represent sample listings as verified
-            live inventory, and prices or statutory approvals are never fabricated. Connect
-            Supabase and manage verified plots via the Admin Dashboard.
+            Entries marked &ldquo;Sample Listing&rdquo; are illustrative
+            placeholders used during development. AVUTHAPURAM SHIVA REAL ESTATE
+            does not represent sample listings as verified live inventory, and
+            prices or statutory approvals are never fabricated. Connect Supabase
+            and manage verified plots via the Admin Dashboard.
           </p>
         </div>
       )}
@@ -120,7 +124,7 @@ export function PropertiesExplorer({ properties, mode }: PropertiesExplorerProps
                 autoCorrect="off"
                 autoCapitalize="none"
                 spellCheck={false}
-                placeholder="Ibrahimpatnam, Janardhan, corner plot..."
+                placeholder="Ibrahimpatnam, Janaharsha Dream City, corner plot..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 className="form-field-control w-full border border-[#CFC8BC] bg-[#FFFFFF] py-2.5 pr-3.5 pl-10 text-sm text-[#111111]"
@@ -212,8 +216,9 @@ export function PropertiesExplorer({ properties, mode }: PropertiesExplorerProps
 
       <div className="flex items-center justify-between border-b border-[#E3DED4] pb-3 text-xs tracking-[0.14em] text-[#57534E] uppercase">
         <p role="status">
-          Showing <strong className="text-[#111111]">{filtered.length}</strong> of{" "}
-          {properties.length} {properties.length === 1 ? "listing" : "listings"}
+          Showing <strong className="text-[#111111]">{filtered.length}</strong>{" "}
+          of {properties.length}{" "}
+          {properties.length === 1 ? "listing" : "listings"}
         </p>
         <span>Pricing displayed only when verified &amp; supplied</span>
       </div>
@@ -224,8 +229,8 @@ export function PropertiesExplorer({ properties, mode }: PropertiesExplorerProps
             No matching plots found
           </p>
           <p className="mx-auto mt-2 max-w-md text-sm text-[#57534E]">
-            Try clearing one or more filters, or contact AVUTHAPURAM SHIVA REAL ESTATE directly with your
-            plot dimension and locality requirements.
+            Try clearing one or more filters, or contact AVUTHAPURAM SHIVA REAL
+            ESTATE directly with your plot dimension and locality requirements.
           </p>
           {hasFilters && (
             <button
@@ -247,4 +252,3 @@ export function PropertiesExplorer({ properties, mode }: PropertiesExplorerProps
     </div>
   );
 }
-

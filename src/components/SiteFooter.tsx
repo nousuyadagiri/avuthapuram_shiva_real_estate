@@ -21,8 +21,9 @@ export async function SiteFooter() {
               </p>
             </div>
             <p className="text-sm leading-relaxed text-[#D4CFC5]">
-              Specialized advisory for open plot buying, open plot selling, and residential land
-              properties across Ibrahimpatnam, Janardhan, and Telangana.
+              Specialized advisory for open plot buying, open plot selling, and
+              residential land properties across Ibrahimpatnam, Janaharsha Dream
+              City, and Telangana.
             </p>
           </div>
 
@@ -75,12 +76,18 @@ export async function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/services#information" className="hover:text-[#FFFFFF]">
+                <Link
+                  href="/services#information"
+                  className="hover:text-[#FFFFFF]"
+                >
                   Property Information &amp; Review
                 </Link>
               </li>
               <li>
-                <Link href="/services#site-visits" className="hover:text-[#FFFFFF]">
+                <Link
+                  href="/services#site-visits"
+                  className="hover:text-[#FFFFFF]"
+                >
                   Site Visit Coordination
                 </Link>
               </li>
@@ -93,17 +100,26 @@ export async function SiteFooter() {
             </h2>
             <ul className="space-y-3 text-sm text-[#D4CFC5]">
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]" aria-hidden="true" />
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]"
+                  aria-hidden="true"
+                />
                 <span>{siteConfig.location.addressNote}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-[#C6A46C]" aria-hidden="true" />
+                <Phone
+                  className="h-4 w-4 shrink-0 text-[#C6A46C]"
+                  aria-hidden="true"
+                />
                 <a href={getTelHref()} className="hover:text-[#FFFFFF]">
                   {siteConfig.contact.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <MessageCircle className="h-4 w-4 shrink-0 text-[#C6A46C]" aria-hidden="true" />
+                <MessageCircle
+                  className="h-4 w-4 shrink-0 text-[#C6A46C]"
+                  aria-hidden="true"
+                />
                 <a
                   href={getWhatsAppHref(
                     "Hello AVUTHAPURAM SHIVA REAL ESTATE, I would like to connect regarding residential open plots.",
@@ -116,8 +132,14 @@ export async function SiteFooter() {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 shrink-0 text-[#C6A46C]" aria-hidden="true" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#FFFFFF]">
+                <Mail
+                  className="h-4 w-4 shrink-0 text-[#C6A46C]"
+                  aria-hidden="true"
+                />
+                <a
+                  href={`mailto:${siteConfig.contact.email}`}
+                  className="hover:text-[#FFFFFF]"
+                >
                   {siteConfig.contact.email}
                 </a>
               </li>
@@ -142,12 +164,17 @@ export async function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-[#292929] pt-8 text-xs text-[#A8A29E] sm:flex-row sm:items-center sm:justify-between">
           <p>
-            &copy; {year} {siteConfig.brandName}. All rights reserved. Location: Ibrahimpatnam,
-            Janardhan, Telangana.
+            &copy; {year} {siteConfig.brandName}. All rights reserved. Location:
+            Ibrahimpatnam, Janaharsha Dream City, Telangana.
           </p>
           <div className="flex flex-wrap items-center gap-6">
-            <span>Sample development listings are clearly marked and non-binding.</span>
-            <Link href="/admin" className="text-[#D4CFC5] underline-offset-4 hover:underline">
+            <span>
+              Sample development listings are clearly marked and non-binding.
+            </span>
+            <Link
+              href="/admin"
+              className="text-[#D4CFC5] underline-offset-4 hover:underline"
+            >
               Admin Portal
             </Link>
           </div>
@@ -156,4 +183,3 @@ export async function SiteFooter() {
     </footer>
   );
 }
-

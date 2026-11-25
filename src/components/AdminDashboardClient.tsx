@@ -58,8 +58,8 @@ const EMPTY_DRAFT: PropertyDraft = {
   title: "",
   slug: "",
   subtitle: "",
-  locationArea: "Janardhan, Ibrahimpatnam",
-  locality: "Ibrahimpatnam, Janardhan",
+  locationArea: "Janaharsha Dream City, Ibrahimpatnam",
+  locality: "Ibrahimpatnam, Janaharsha Dream City",
   state: "Telangana",
   propertyType: "Residential Open Plot",
   plotDimensions: "",
@@ -69,7 +69,8 @@ const EMPTY_DRAFT: PropertyDraft = {
   priceInr: "",
   priceDisplay: "",
   status: "Available",
-  documentationSummary: "Verified documentation details shared upon direct enquiry.",
+  documentationSummary:
+    "Verified documentation details shared upon direct enquiry.",
   description: "",
   highlightsText: "",
   images: [],
@@ -112,7 +113,9 @@ export function AdminDashboardClient({
   dataSourceStatus,
 }: AdminDashboardClientProps) {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<"properties" | "enquiries">("properties");
+  const [activeTab, setActiveTab] = useState<"properties" | "enquiries">(
+    "properties",
+  );
   const [properties, setProperties] = useState<Property[]>(initialProperties);
   const [enquiries, setEnquiries] = useState<Enquiry[]>(initialEnquiries);
 
@@ -123,7 +126,10 @@ export function AdminDashboardClient({
 
   const [busy, setBusy] = useState(false);
   const [uploading, setUploading] = useState(false);
-  const [feedback, setFeedback] = useState<{ ok: boolean; text: string } | null>(null);
+  const [feedback, setFeedback] = useState<{
+    ok: boolean;
+    text: string;
+  } | null>(null);
   const [enquiryFilter, setEnquiryFilter] = useState<string>("all");
 
   const canPersist = dataSourceStatus.supabaseConfigured;
@@ -146,7 +152,9 @@ export function AdminDashboardClient({
     setFeedback(null);
   };
 
-  const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const file = event.target.files?.[0];
     if (!file) return;
     setUploading(true);
@@ -155,8 +163,15 @@ export function AdminDashboardClient({
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await fetch("/api/admin/upload", { method: "POST", body: formData });
-      const data = (await res.json()) as { ok?: boolean; url?: string; error?: string };
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = (await res.json()) as {
+        ok?: boolean;
+        url?: string;
+        error?: string;
+      };
       if (!res.ok || !data.ok || !data.url) {
         setFeedback({ ok: false, text: data.error || "Image upload failed." });
         return;
@@ -201,7 +216,9 @@ export function AdminDashboardClient({
     setNewImageAlt("");
   };
 
-  const handleSaveProperty = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSaveProperty = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
     event.preventDefault();
     if (!canPersist) return;
 
@@ -255,13 +272,18 @@ export function AdminDashboardClient({
       };
 
       if (!res.ok || !data.ok || !data.property) {
-        setFeedback({ ok: false, text: data.error || "Unable to save property." });
+        setFeedback({
+          ok: false,
+          text: data.error || "Unable to save property.",
+        });
         return;
       }
 
       if (isEdit) {
         setProperties((prev) =>
-          prev.map((item) => (item.id === data.property!.id ? data.property! : item)),
+          prev.map((item) =>
+            item.id === data.property!.id ? data.property! : item,
+          ),
         );
       } else {
         setProperties((prev) => [data.property!, ...prev]);
@@ -270,7 +292,9 @@ export function AdminDashboardClient({
       setShowEditor(false);
       setFeedback({
         ok: true,
-        text: isEdit ? "Property updated successfully." : "Property created successfully.",
+        text: isEdit
+          ? "Property updated successfully."
+          : "Property created successfully.",
       });
     } catch {
       setFeedback({ ok: false, text: "Network error while saving property." });
@@ -279,7 +303,10 @@ export function AdminDashboardClient({
     }
   };
 
-  const handleQuickStatusChange = async (id: string, status: PropertyStatus) => {
+  const handleQuickStatusChange = async (
+    id: string,
+    status: PropertyStatus,
+  ) => {
     if (!canPersist) return;
     setBusy(true);
     try {
@@ -288,7 +315,11 @@ export function AdminDashboardClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status }),
       });
-      const data = (await res.json()) as { ok?: boolean; property?: Property; error?: string };
+      const data = (await res.json()) as {
+        ok?: boolean;
+        property?: Property;
+        error?: string;
+      };
       if (res.ok && data.ok && data.property) {
         setProperties((prev) =>
           prev.map((item) => (item.id === id ? data.property! : item)),
@@ -335,14 +366,21 @@ export function AdminDashboardClient({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(patch),
       });
-      const data = (await res.json()) as { ok?: boolean; enquiry?: Enquiry; error?: string };
+      const data = (await res.json()) as {
+        ok?: boolean;
+        enquiry?: Enquiry;
+        error?: string;
+      };
       if (res.ok && data.ok && data.enquiry) {
         setEnquiries((prev) =>
           prev.map((item) => (item.id === id ? data.enquiry! : item)),
         );
         setFeedback({ ok: true, text: "Enquiry updated." });
       } else {
-        setFeedback({ ok: false, text: data.error || "Enquiry update failed." });
+        setFeedback({
+          ok: false,
+          text: data.error || "Enquiry update failed.",
+        });
       }
     } finally {
       setBusy(false);
@@ -354,7 +392,9 @@ export function AdminDashboardClient({
     if (!window.confirm("Delete this enquiry record?")) return;
     setBusy(true);
     try {
-      const res = await fetch(`/api/admin/enquiries/${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/admin/enquiries/${id}`, {
+        method: "DELETE",
+      });
       if (res.ok) {
         setEnquiries((prev) => prev.filter((item) => item.id !== id));
         setFeedback({ ok: true, text: "Enquiry deleted." });
@@ -380,7 +420,9 @@ export function AdminDashboardClient({
           <h1 className="mt-1 font-serif text-3xl font-medium">
             Inventory &amp; Enquiry Management
           </h1>
-          <p className="mt-1 text-xs text-[#D4CFC5]">Signed in as {adminEmail}</p>
+          <p className="mt-1 text-xs text-[#D4CFC5]">
+            Signed in as {adminEmail}
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
@@ -392,7 +434,9 @@ export function AdminDashboardClient({
             }`}
           >
             <Database className="h-3.5 w-3.5" aria-hidden="true" />
-            <span>{canPersist ? "Supabase Connected" : "Preview Mode (No DB)"}</span>
+            <span>
+              {canPersist ? "Supabase Connected" : "Preview Mode (No DB)"}
+            </span>
           </span>
 
           <button
@@ -412,17 +456,22 @@ export function AdminDashboardClient({
           role="alert"
           className="flex items-start gap-3 border border-[#8A672E] bg-[#FDF9F0] p-5 text-sm text-[#78531D]"
         >
-          <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+          <AlertTriangle
+            className="mt-0.5 h-5 w-5 shrink-0"
+            aria-hidden="true"
+          />
           <div>
             <p className="font-semibold">
               Database Persistence Not Connected (Read-Only Sample Mode)
             </p>
             <p className="mt-1 text-xs leading-relaxed">
               Supabase environment variables (<code>SUPABASE_URL</code> and{" "}
-              <code>SUPABASE_SERVICE_ROLE_KEY</code>) are not configured on the server.
-              Create your Supabase project, run <code>supabase/schema.sql</code>, and add the
-              server environment variables in Vercel or <code>.env.local</code> to enable
-              creating, editing, deleting properties, uploading images, and storing enquiries.
+              <code>SUPABASE_SERVICE_ROLE_KEY</code>) are not configured on the
+              server. Create your Supabase project, run{" "}
+              <code>supabase/schema.sql</code>, and add the server environment
+              variables in Vercel or <code>.env.local</code> to enable creating,
+              editing, deleting properties, uploading images, and storing
+              enquiries.
             </p>
           </div>
         </div>
@@ -521,7 +570,9 @@ export function AdminDashboardClient({
                     type="text"
                     required
                     value={draft.title}
-                    onChange={(e) => setDraft({ ...draft, title: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, title: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -533,7 +584,9 @@ export function AdminDashboardClient({
                     type="text"
                     placeholder="auto-generated-from-title"
                     value={draft.slug}
-                    onChange={(e) => setDraft({ ...draft, slug: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, slug: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -545,7 +598,9 @@ export function AdminDashboardClient({
                     type="text"
                     required
                     value={draft.locationArea}
-                    onChange={(e) => setDraft({ ...draft, locationArea: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, locationArea: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -558,7 +613,9 @@ export function AdminDashboardClient({
                     required
                     placeholder="e.g. 40 ft x 60 ft"
                     value={draft.plotDimensions}
-                    onChange={(e) => setDraft({ ...draft, plotDimensions: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, plotDimensions: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -570,7 +627,9 @@ export function AdminDashboardClient({
                     type="number"
                     step="0.01"
                     value={draft.areaSqYards}
-                    onChange={(e) => setDraft({ ...draft, areaSqYards: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, areaSqYards: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -581,12 +640,17 @@ export function AdminDashboardClient({
                   <select
                     value={draft.status}
                     onChange={(e) =>
-                      setDraft({ ...draft, status: e.target.value as PropertyStatus })
+                      setDraft({
+                        ...draft,
+                        status: e.target.value as PropertyStatus,
+                      })
                     }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   >
                     <option value="Available">Available</option>
-                    <option value="Limited Availability">Limited Availability</option>
+                    <option value="Limited Availability">
+                      Limited Availability
+                    </option>
                     <option value="Reserved">Reserved</option>
                     <option value="Sold">Sold</option>
                   </select>
@@ -599,7 +663,9 @@ export function AdminDashboardClient({
                     type="number"
                     step="1"
                     value={draft.priceInr}
-                    onChange={(e) => setDraft({ ...draft, priceInr: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, priceInr: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -611,7 +677,9 @@ export function AdminDashboardClient({
                     type="text"
                     placeholder="e.g. INR 24,500 / Sq. Yard"
                     value={draft.priceDisplay}
-                    onChange={(e) => setDraft({ ...draft, priceDisplay: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, priceDisplay: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -622,7 +690,9 @@ export function AdminDashboardClient({
                   <input
                     type="text"
                     value={draft.facing}
-                    onChange={(e) => setDraft({ ...draft, facing: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, facing: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -633,7 +703,9 @@ export function AdminDashboardClient({
                   <input
                     type="text"
                     value={draft.roadWidth}
-                    onChange={(e) => setDraft({ ...draft, roadWidth: e.target.value })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, roadWidth: e.target.value })
+                    }
                     className="form-field-control w-full border border-[#CFC8BC] px-3 py-2 text-sm"
                   />
                 </div>
@@ -647,7 +719,9 @@ export function AdminDashboardClient({
                   rows={4}
                   required
                   value={draft.description}
-                  onChange={(e) => setDraft({ ...draft, description: e.target.value })}
+                  onChange={(e) =>
+                    setDraft({ ...draft, description: e.target.value })
+                  }
                   className="w-full border border-[#CFC8BC] p-3 text-sm"
                 />
               </div>
@@ -673,7 +747,9 @@ export function AdminDashboardClient({
                 <textarea
                   rows={3}
                   value={draft.highlightsText}
-                  onChange={(e) => setDraft({ ...draft, highlightsText: e.target.value })}
+                  onChange={(e) =>
+                    setDraft({ ...draft, highlightsText: e.target.value })
+                  }
                   className="w-full border border-[#CFC8BC] p-3 text-sm"
                 />
               </div>
@@ -687,7 +763,9 @@ export function AdminDashboardClient({
                 <div className="flex flex-wrap items-center gap-4">
                   <label className="inline-flex min-h-[44px] cursor-pointer items-center gap-2 border border-[#111111] px-4 py-2 text-xs font-semibold tracking-[0.14em] uppercase hover:bg-[#F8F7F4]">
                     <Upload className="h-4 w-4" aria-hidden="true" />
-                    <span>{uploading ? "Uploading..." : "Upload Image to Storage"}</span>
+                    <span>
+                      {uploading ? "Uploading..." : "Upload Image to Storage"}
+                    </span>
                     <input
                       type="file"
                       accept="image/jpeg,image/png,image/webp,image/avif"
@@ -738,7 +816,9 @@ export function AdminDashboardClient({
                             className="object-cover"
                           />
                         </div>
-                        <span className="truncate text-[#57534E]">{img.alt}</span>
+                        <span className="truncate text-[#57534E]">
+                          {img.alt}
+                        </span>
                         <button
                           type="button"
                           aria-label={`Remove image ${idx + 1}`}
@@ -763,7 +843,9 @@ export function AdminDashboardClient({
                   <input
                     type="checkbox"
                     checked={draft.isPublished}
-                    onChange={(e) => setDraft({ ...draft, isPublished: e.target.checked })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, isPublished: e.target.checked })
+                    }
                     className="h-4 w-4 accent-[#111111]"
                   />
                   <span>Published on Website</span>
@@ -772,7 +854,9 @@ export function AdminDashboardClient({
                   <input
                     type="checkbox"
                     checked={draft.isFeatured}
-                    onChange={(e) => setDraft({ ...draft, isFeatured: e.target.checked })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, isFeatured: e.target.checked })
+                    }
                     className="h-4 w-4 accent-[#111111]"
                   />
                   <span>Featured on Home Page</span>
@@ -781,7 +865,9 @@ export function AdminDashboardClient({
                   <input
                     type="checkbox"
                     checked={draft.isSample}
-                    onChange={(e) => setDraft({ ...draft, isSample: e.target.checked })}
+                    onChange={(e) =>
+                      setDraft({ ...draft, isSample: e.target.checked })
+                    }
                     className="h-4 w-4 accent-[#111111]"
                   />
                   <span>Mark as Sample Listing</span>
@@ -793,7 +879,11 @@ export function AdminDashboardClient({
                 disabled={busy || !canPersist}
                 className="inline-flex min-h-[48px] items-center bg-[#111111] px-8 py-3 text-xs font-semibold tracking-[0.16em] text-[#FFFFFF] uppercase disabled:opacity-40"
               >
-                {busy ? "Saving..." : draft.id ? "Save Property Changes" : "Create Property"}
+                {busy
+                  ? "Saving..."
+                  : draft.id
+                    ? "Save Property Changes"
+                    : "Create Property"}
               </button>
             </form>
           )}
@@ -804,26 +894,44 @@ export function AdminDashboardClient({
               <caption className="visually-hidden">Managed Properties</caption>
               <thead className="border-b border-[#E3DED4] bg-[#F8F7F4] text-xs tracking-[0.14em] text-[#57534E] uppercase">
                 <tr>
-                  <th scope="col" className="px-5 py-4">Property</th>
-                  <th scope="col" className="px-5 py-4">Location</th>
-                  <th scope="col" className="px-5 py-4">Dimensions</th>
-                  <th scope="col" className="px-5 py-4">Price</th>
-                  <th scope="col" className="px-5 py-4">Status</th>
-                  <th scope="col" className="px-5 py-4 text-right">Actions</th>
+                  <th scope="col" className="px-5 py-4">
+                    Property
+                  </th>
+                  <th scope="col" className="px-5 py-4">
+                    Location
+                  </th>
+                  <th scope="col" className="px-5 py-4">
+                    Dimensions
+                  </th>
+                  <th scope="col" className="px-5 py-4">
+                    Price
+                  </th>
+                  <th scope="col" className="px-5 py-4">
+                    Status
+                  </th>
+                  <th scope="col" className="px-5 py-4 text-right">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#E3DED4]">
                 {properties.map((property) => (
                   <tr key={property.id}>
                     <td className="px-5 py-4">
-                      <p className="font-medium text-[#111111]">{property.title}</p>
+                      <p className="font-medium text-[#111111]">
+                        {property.title}
+                      </p>
                       <p className="mt-0.5 text-xs text-[#57534E]">
                         {property.isSample ? "Sample" : "Verified"} &bull;{" "}
                         {property.isPublished ? "Published" : "Draft"}
                       </p>
                     </td>
-                    <td className="px-5 py-4 text-[#292929]">{property.locationArea}</td>
-                    <td className="px-5 py-4 text-[#292929]">{property.plotDimensions}</td>
+                    <td className="px-5 py-4 text-[#292929]">
+                      {property.locationArea}
+                    </td>
+                    <td className="px-5 py-4 text-[#292929]">
+                      {property.plotDimensions}
+                    </td>
                     <td className="px-5 py-4 text-[#292929]">
                       {property.priceDisplay ||
                         (property.priceInr !== null
@@ -844,7 +952,9 @@ export function AdminDashboardClient({
                         className="border border-[#CFC8BC] bg-[#FFFFFF] px-2.5 py-1.5 text-xs disabled:opacity-60"
                       >
                         <option value="Available">Available</option>
-                        <option value="Limited Availability">Limited Availability</option>
+                        <option value="Limited Availability">
+                          Limited Availability
+                        </option>
                         <option value="Reserved">Reserved</option>
                         <option value="Sold">Sold</option>
                       </select>
@@ -919,15 +1029,17 @@ export function AdminDashboardClient({
                     <div>
                       <p className="text-[11px] font-semibold tracking-[0.16em] text-[#8A672E] uppercase">
                         {enquiry.enquiryType}
-                        {enquiry.propertyTitle ? ` • ${enquiry.propertyTitle}` : ""}
+                        {enquiry.propertyTitle
+                          ? ` • ${enquiry.propertyTitle}`
+                          : ""}
                       </p>
                       <h3 className="mt-1 font-serif text-xl font-medium text-[#111111]">
                         {enquiry.fullName}
                       </h3>
                       <p className="mt-1 text-xs text-[#57534E]">
                         {enquiry.phone}
-                        {enquiry.email ? ` • ${enquiry.email}` : ""} &bull; Preferred:{" "}
-                        {enquiry.preferredContact}
+                        {enquiry.email ? ` • ${enquiry.email}` : ""} &bull;
+                        Preferred: {enquiry.preferredContact}
                       </p>
                     </div>
 
@@ -973,4 +1085,3 @@ export function AdminDashboardClient({
     </div>
   );
 }
-

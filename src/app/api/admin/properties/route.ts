@@ -16,7 +16,10 @@ function slugify(value: string): string {
 export async function GET() {
   const session = await getAdminSession();
   if (!session) {
-    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json(
+      { ok: false, error: "Unauthorized" },
+      { status: 401 },
+    );
   }
 
   const data = await getAllPropertiesAdmin();
@@ -26,7 +29,10 @@ export async function GET() {
 export async function POST(request: Request) {
   const session = await getAdminSession();
   if (!session) {
-    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json(
+      { ok: false, error: "Unauthorized" },
+      { status: 401 },
+    );
   }
 
   if (!isSupabaseConfigured()) {
@@ -54,7 +60,8 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           ok: false,
-          error: "Title, location area, plot dimensions, and description are required.",
+          error:
+            "Title, location area, plot dimensions, and description are required.",
         },
         { status: 400 },
       );
@@ -74,21 +81,29 @@ export async function POST(request: Request) {
     ) as PropertyStatus;
 
     const areaSqYards =
-      body.areaSqYards !== null && body.areaSqYards !== "" && body.areaSqYards !== undefined
+      body.areaSqYards !== null &&
+      body.areaSqYards !== "" &&
+      body.areaSqYards !== undefined
         ? Number(body.areaSqYards)
         : null;
 
     const priceInr =
-      body.priceInr !== null && body.priceInr !== "" && body.priceInr !== undefined
+      body.priceInr !== null &&
+      body.priceInr !== "" &&
+      body.priceInr !== undefined
         ? Number(body.priceInr)
         : null;
 
     const highlights = Array.isArray(body.highlights)
-      ? body.highlights.filter((x): x is string => typeof x === "string" && x.trim() !== "")
+      ? body.highlights.filter(
+          (x): x is string => typeof x === "string" && x.trim() !== "",
+        )
       : [];
 
     const images = Array.isArray(body.images)
-      ? (body.images as PropertyImage[]).filter((img) => img && typeof img.url === "string" && img.url.trim() !== "")
+      ? (body.images as PropertyImage[]).filter(
+          (img) => img && typeof img.url === "string" && img.url.trim() !== "",
+        )
       : [];
 
     const created = await createPropertyAdmin({
@@ -99,7 +114,7 @@ export async function POST(request: Request) {
       locality:
         typeof body.locality === "string" && body.locality.trim()
           ? body.locality.trim()
-          : "Ibrahimpatnam, Janardhan",
+          : "Ibrahimpatnam, Janaharsha Dream City",
       state:
         typeof body.state === "string" && body.state.trim()
           ? body.state.trim()
@@ -125,7 +140,8 @@ export async function POST(request: Request) {
           : null,
       status,
       documentationSummary:
-        typeof body.documentationSummary === "string" && body.documentationSummary.trim()
+        typeof body.documentationSummary === "string" &&
+        body.documentationSummary.trim()
           ? body.documentationSummary.trim()
           : "Documentation details shared upon verified enquiry.",
       description,
@@ -145,9 +161,11 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("POST /api/admin/properties error:", error);
     return NextResponse.json(
-      { ok: false, error: error instanceof Error ? error.message : "Create failed" },
+      {
+        ok: false,
+        error: error instanceof Error ? error.message : "Create failed",
+      },
       { status: 500 },
     );
   }
 }
-

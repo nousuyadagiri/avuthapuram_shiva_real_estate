@@ -2,12 +2,13 @@ import type { Property } from "@/types/real-estate";
 
 export const SAMPLE_PROPERTIES: Property[] = [
   {
-    id: "sample-janardhan-east-01",
-    slug: "sample-residential-plot-janardhan-east",
-    title: "Sample Residential Open Plot — Janardhan East",
-    subtitle: "Illustrative development entry showcasing open residential land layout",
-    locationArea: "Janardhan, Ibrahimpatnam",
-    locality: "Ibrahimpatnam, Janardhan",
+    id: "sample-Janaharsha Dream City-east-01",
+    slug: "sample-residential-plot-Janaharsha Dream City-east",
+    title: "Sample Residential Open Plot — Janaharsha Dream City East",
+    subtitle:
+      "Illustrative development entry showcasing open residential land layout",
+    locationArea: "Janaharsha Dream City, Ibrahimpatnam",
+    locality: "Ibrahimpatnam, Janaharsha Dream City",
     state: "Telangana",
     propertyType: "Residential Open Plot",
     plotDimensions: "40 ft x 60 ft (Indicative Sample)",
@@ -20,10 +21,10 @@ export const SAMPLE_PROPERTIES: Property[] = [
     documentationSummary:
       "Sample placeholder: Actual survey numbers, link documents, and statutory records are verified and provided directly upon client enquiry. No RERA registration or government approval is claimed for sample entries.",
     description:
-      "This is a clearly marked sample listing created to demonstrate the AVUTHAPURAM SHIVA REAL ESTATE property presentation format. It illustrates how residential open plots in the Janardhan and Ibrahimpatnam area are catalogued with dimensions, orientation, approach road notes, and documentation verification status before verified inventory is published via the Admin Dashboard.",
+      "This is a clearly marked sample listing created to demonstrate the AVUTHAPURAM SHIVA REAL ESTATE property presentation format. It illustrates how residential open plots in the Janaharsha Dream City and Ibrahimpatnam area are catalogued with dimensions, orientation, approach road notes, and documentation verification status before verified inventory is published via the Admin Dashboard.",
     highlights: [
       "Clearly marked sample development listing (not live inventory)",
-      "Ibrahimpatnam – Janardhan residential land micro-market format",
+      "Ibrahimpatnam – Janaharsha Dream City residential land micro-market format",
       "Demarcated open plot presentation with multi-image gallery",
       "Site visit coordination available for verified client mandates",
     ],
@@ -53,7 +54,7 @@ export const SAMPLE_PROPERTIES: Property[] = [
     title: "Sample Corner Open Plot — Ibrahimpatnam",
     subtitle: "Illustrative corner residential plot specification preview",
     locationArea: "Ibrahimpatnam",
-    locality: "Ibrahimpatnam, Janardhan",
+    locality: "Ibrahimpatnam, Janaharsha Dream City",
     state: "Telangana",
     propertyType: "Residential Corner Plot",
     plotDimensions: "33 ft x 55 ft (Indicative Sample)",
@@ -91,11 +92,11 @@ export const SAMPLE_PROPERTIES: Property[] = [
   },
   {
     id: "sample-telangana-corridor-03",
-    slug: "sample-residential-land-janardhan-corridor",
-    title: "Sample Residential Land — Janardhan Corridor",
+    slug: "sample-residential-land-Janaharsha Dream City-corridor",
+    title: "Sample Residential Land — Janaharsha Dream City Corridor",
     subtitle: "Illustrative larger-format residential open plot listing",
-    locationArea: "Janardhan, Ibrahimpatnam",
-    locality: "Ibrahimpatnam, Janardhan",
+    locationArea: "Janaharsha Dream City, Ibrahimpatnam",
+    locality: "Ibrahimpatnam, Janaharsha Dream City",
     state: "Telangana",
     propertyType: "Residential Land Parcel",
     plotDimensions: "50 ft x 60 ft (Indicative Sample)",
@@ -131,4 +132,3 @@ export const SAMPLE_PROPERTIES: Property[] = [
     updatedAt: "2026-01-03T00:00:00.000Z",
   },
 ];
-

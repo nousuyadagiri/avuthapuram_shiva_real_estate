@@ -1,6 +1,9 @@
 import "server-only";
 import { SAMPLE_PROPERTIES } from "@/lib/data/sample-properties";
-import { getSupabaseAdminClient, isSupabaseConfigured } from "@/lib/supabase/server";
+import {
+  getSupabaseAdminClient,
+  isSupabaseConfigured,
+} from "@/lib/supabase/server";
 import { isAdminConfigured } from "@/lib/auth/session";
 import type {
   DataSourceStatus,
@@ -63,7 +66,7 @@ function mapPropertyRow(row: PropertyRow): Property {
     title: row.title,
     subtitle: row.subtitle || "",
     locationArea: row.location_area,
-    locality: row.locality || "Ibrahimpatnam, Janardhan",
+    locality: row.locality || "Ibrahimpatnam, Janaharsha Dream City",
     state: row.state || "Telangana",
     propertyType: row.property_type || "Residential Open Plot",
     plotDimensions: row.plot_dimensions,
@@ -173,7 +176,10 @@ export async function getPublishedProperties(
     .order("created_at", { ascending: false });
 
   if (error || !data) {
-    console.error("Failed to fetch published properties from Supabase:", error?.message);
+    console.error(
+      "Failed to fetch published properties from Supabase:",
+      error?.message,
+    );
     return {
       properties: filterPropertiesList(SAMPLE_PROPERTIES, filters),
       mode: "preview",
@@ -193,7 +199,8 @@ export async function getPropertyBySlug(
   const supabase = getSupabaseAdminClient();
   if (!supabase) {
     return {
-      property: SAMPLE_PROPERTIES.find((p) => p.slug === slug && p.isPublished) || null,
+      property:
+        SAMPLE_PROPERTIES.find((p) => p.slug === slug && p.isPublished) || null,
       mode: "preview",
     };
   }
@@ -296,25 +303,32 @@ export async function updatePropertyAdmin(
   if (payload.slug !== undefined) patch.slug = payload.slug;
   if (payload.title !== undefined) patch.title = payload.title;
   if (payload.subtitle !== undefined) patch.subtitle = payload.subtitle;
-  if (payload.locationArea !== undefined) patch.location_area = payload.locationArea;
+  if (payload.locationArea !== undefined)
+    patch.location_area = payload.locationArea;
   if (payload.locality !== undefined) patch.locality = payload.locality;
   if (payload.state !== undefined) patch.state = payload.state;
-  if (payload.propertyType !== undefined) patch.property_type = payload.propertyType;
-  if (payload.plotDimensions !== undefined) patch.plot_dimensions = payload.plotDimensions;
-  if (payload.areaSqYards !== undefined) patch.area_sq_yards = payload.areaSqYards;
+  if (payload.propertyType !== undefined)
+    patch.property_type = payload.propertyType;
+  if (payload.plotDimensions !== undefined)
+    patch.plot_dimensions = payload.plotDimensions;
+  if (payload.areaSqYards !== undefined)
+    patch.area_sq_yards = payload.areaSqYards;
   if (payload.facing !== undefined) patch.facing = payload.facing;
   if (payload.roadWidth !== undefined) patch.road_width = payload.roadWidth;
   if (payload.priceInr !== undefined) patch.price_inr = payload.priceInr;
-  if (payload.priceDisplay !== undefined) patch.price_display = payload.priceDisplay;
+  if (payload.priceDisplay !== undefined)
+    patch.price_display = payload.priceDisplay;
   if (payload.status !== undefined) patch.status = payload.status;
   if (payload.documentationSummary !== undefined)
     patch.documentation_summary = payload.documentationSummary;
-  if (payload.description !== undefined) patch.description = payload.description;
+  if (payload.description !== undefined)
+    patch.description = payload.description;
   if (payload.highlights !== undefined) patch.highlights = payload.highlights;
   if (payload.images !== undefined) patch.images = payload.images;
   if (payload.isFeatured !== undefined) patch.is_featured = payload.isFeatured;
   if (payload.isSample !== undefined) patch.is_sample = payload.isSample;
-  if (payload.isPublished !== undefined) patch.is_published = payload.isPublished;
+  if (payload.isPublished !== undefined)
+    patch.is_published = payload.isPublished;
 
   const { data, error } = await supabase
     .from("properties")
@@ -361,7 +375,9 @@ export async function createEnquiryRecord(input: {
   const uuidRegex =
     /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   const validPropertyId =
-    input.propertyId && uuidRegex.test(input.propertyId) ? input.propertyId : null;
+    input.propertyId && uuidRegex.test(input.propertyId)
+      ? input.propertyId
+      : null;
 
   const { data, error } = await supabase
     .from("enquiries")
@@ -421,7 +437,8 @@ export async function updateEnquiryAdmin(
 
   const payload: Record<string, unknown> = {};
   if (patch.status !== undefined) payload.status = patch.status;
-  if (patch.internalNotes !== undefined) payload.internal_notes = patch.internalNotes;
+  if (patch.internalNotes !== undefined)
+    payload.internal_notes = patch.internalNotes;
 
   const { data, error } = await supabase
     .from("enquiries")
@@ -448,4 +465,3 @@ export async function deleteEnquiryAdmin(id: string): Promise<void> {
     throw new Error(error.message);
   }
 }
-

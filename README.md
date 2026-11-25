@@ -1,6 +1,6 @@
 # AVUTHAPURAM SHIVA REAL ESTATE — Corporate Website
 
-Corporate web platform for **AVUTHAPURAM SHIVA REAL ESTATE**, founded by **Avuthapuram Shiva**, specializing in open plot buying, open plot selling, and residential land properties in **Ibrahimpatnam, Janardhan, Telangana, India**.
+Corporate web platform for **AVUTHAPURAM SHIVA REAL ESTATE**, founded by **Avuthapuram Shiva**, specializing in open plot buying, open plot selling, and residential land properties in **Ibrahimpatnam, Janaharsha Dream City, Telangana, India**.
 
 ---
 
@@ -16,18 +16,18 @@ Corporate web platform for **AVUTHAPURAM SHIVA REAL ESTATE**, founded by **Avuth
 
 ## Routes Overview
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Home page — Hero, specializations, featured properties, Why Choose Us, Services, Location Highlights |
-| `/about` | About AVUTHAPURAM SHIVA REAL ESTATE, founder Avuthapuram Shiva, vision, mission, accuracy standards |
-| `/properties` | Searchable & filterable open plot catalog |
+| Route                | Purpose                                                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `/`                  | Home page — Hero, specializations, featured properties, Why Choose Us, Services, Location Highlights         |
+| `/about`             | About AVUTHAPURAM SHIVA REAL ESTATE, founder Avuthapuram Shiva, vision, mission, accuracy standards          |
+| `/properties`        | Searchable & filterable open plot catalog                                                                    |
 | `/properties/[slug]` | Individual plot detail page with gallery, specification table, documentation status, WhatsApp & enquiry form |
-| `/services` | Open Plot Buying Assistance, Open Plot Selling Assistance, Property Information, Site Visit Coordination |
-| `/contact` | Configurable contact details, click-to-call, WhatsApp integration, validated consultation form |
-| `/admin/login` | Server-verified admin login (`noindex, nofollow`) |
-| `/admin` | Protected admin dashboard for property CRUD, image upload, status/price updates, and enquiry management |
-| `/sitemap.xml` | Dynamic XML sitemap |
-| `/robots.txt` | Crawler directives (disallowing `/admin` and `/api/admin/`) |
+| `/services`          | Open Plot Buying Assistance, Open Plot Selling Assistance, Property Information, Site Visit Coordination     |
+| `/contact`           | Configurable contact details, click-to-call, WhatsApp integration, validated consultation form               |
+| `/admin/login`       | Server-verified admin login (`noindex, nofollow`)                                                            |
+| `/admin`             | Protected admin dashboard for property CRUD, image upload, status/price updates, and enquiry management      |
+| `/sitemap.xml`       | Dynamic XML sitemap                                                                                          |
+| `/robots.txt`        | Crawler directives (disallowing `/admin` and `/api/admin/`)                                                  |
 
 ---
 
@@ -36,15 +36,17 @@ Corporate web platform for **AVUTHAPURAM SHIVA REAL ESTATE**, founded by **Avuth
 Copy `.env.example` to `.env.local` for local development, or configure these in **Vercel Project Settings -> Environment Variables**:
 
 ### Public Configuration (`NEXT_PUBLIC_*`)
+
 - `NEXT_PUBLIC_SITE_URL` — Canonical production URL (e.g., `https://www.avuthapuramshivarealestate.com`). Used for canonical links, Open Graph URLs, `sitemap.xml`, and `robots.txt`.
 - `NEXT_PUBLIC_PHONE` — Verified business phone number for click-to-call (`tel:`).
 - `NEXT_PUBLIC_WHATSAPP` — Digits-only WhatsApp number with country code (e.g., `919XXXXXXXXX`).
 - `NEXT_PUBLIC_EMAIL` — Verified business email address.
-- `NEXT_PUBLIC_OFFICE_ADDRESS` — Verified street address in Ibrahimpatnam, Janardhan, Telangana.
+- `NEXT_PUBLIC_OFFICE_ADDRESS` — Verified street address in Ibrahimpatnam, Janaharsha Dream City, Telangana.
 - `NEXT_PUBLIC_SOCIAL_INSTAGRAM`, `NEXT_PUBLIC_SOCIAL_LINKEDIN`, `NEXT_PUBLIC_SOCIAL_FACEBOOK`, `NEXT_PUBLIC_SOCIAL_YOUTUBE` — Optional social URLs (hidden automatically when blank).
 - `GOOGLE_SITE_VERIFICATION` — Verification token for Google Search Console (`meta name="google-site-verification"`).
 
 ### Server-Only Variables (Never prefix with `NEXT_PUBLIC_`)
+
 - `SUPABASE_URL` — Your Supabase project URL (`https://<project-ref>.supabase.co`).
 - `SUPABASE_SERVICE_ROLE_KEY` — Supabase Service Role key used strictly inside Server Components and API Route Handlers.
 - `SUPABASE_STORAGE_BUCKET` — Storage bucket name for property images (defaults to `property-images`).

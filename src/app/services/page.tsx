@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Compass, FileText, Handshake, MapPinned } from "lucide-react";
+import {
+  ArrowRight,
+  Compass,
+  FileText,
+  Handshake,
+  MapPinned,
+} from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { getTelHref, getWhatsAppHref } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Services | Open Plot Buying & Selling Assistance",
   description:
-    "Explore AVUTHAPURAM SHIVA REAL ESTATE services in Ibrahimpatnam, Janardhan, Telangana: open plot buying assistance, open plot selling assistance, property information, and site visit coordination.",
+    "Explore AVUTHAPURAM SHIVA REAL ESTATE services in Ibrahimpatnam, Janaharsha Dream City, Telangana: open plot buying assistance, open plot selling assistance, property information, and site visit coordination.",
   alternates: {
     canonical: "/services",
   },
@@ -20,7 +26,7 @@ const SERVICES = [
     icon: Handshake,
     title: "Open Plot Buying Assistance",
     summary:
-      "Structured guidance for individuals and families seeking residential open plots in Ibrahimpatnam, Janardhan, and greater Hyderabad corridors.",
+      "Structured guidance for individuals and families seeking residential open plots in Ibrahimpatnam, Janaharsha Dream City, and greater Hyderabad corridors.",
     points: [
       "Requirement assessment by budget, plot dimension, and preferred facing",
       "Shortlisting of residential land options matched to your holding horizon",
@@ -59,7 +65,7 @@ const SERVICES = [
     icon: MapPinned,
     title: "Site Visit Coordination",
     summary:
-      "Planned, accompanied on-ground plot visits in Ibrahimpatnam and Janardhan so you can inspect boundaries and neighborhood surroundings directly.",
+      "Planned, accompanied on-ground plot visits in Ibrahimpatnam and Janaharsha Dream City so you can inspect boundaries and neighborhood surroundings directly.",
     points: [
       "Scheduled appointments aligned with your availability",
       "Physical walkthrough of boundary markers and approach roads",
@@ -87,8 +93,9 @@ export default function ServicesPage() {
             Dedicated Services for Open Plots &amp; Residential Land
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#D4CFC5]">
-            Every service at AVUTHAPURAM SHIVA REAL ESTATE is built to make buying or selling residential
-            plots in Telangana straightforward, documented, and grounded in local reality.
+            Every service at AVUTHAPURAM SHIVA REAL ESTATE is built to make
+            buying or selling residential plots in Telangana straightforward,
+            documented, and grounded in local reality.
           </p>
         </div>
       </section>
@@ -108,7 +115,10 @@ export default function ServicesPage() {
                     <span className="text-xs font-semibold tracking-[0.2em] text-[#8A672E]">
                       {service.number}
                     </span>
-                    <Icon className="h-5 w-5 text-[#8A672E]" aria-hidden="true" />
+                    <Icon
+                      className="h-5 w-5 text-[#8A672E]"
+                      aria-hidden="true"
+                    />
                   </div>
                   <h2 className="mt-3 font-serif text-3xl font-medium text-[#111111]">
                     {service.title}
@@ -159,10 +169,11 @@ export default function ServicesPage() {
         <div className="mt-14 border border-[#E3DED4] bg-[#111111] p-8 text-[#F8F7F4] sm:flex sm:items-center sm:justify-between sm:p-10">
           <div>
             <h2 className="font-serif text-2xl font-medium text-[#FFFFFF] sm:text-3xl">
-              Planning a site visit in Ibrahimpatnam or Janardhan?
+              Planning a site visit in Ibrahimpatnam or Janaharsha Dream City?
             </h2>
             <p className="mt-2 text-sm text-[#D4CFC5]">
-              Call directly or browse our property showcase to see how parcels are structured.
+              Call directly or browse our property showcase to see how parcels
+              are structured.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-4 sm:mt-0">
@@ -184,4 +195,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title:
     "AVUTHAPURAM SHIVA REAL ESTATE | Open Plots in Ibrahimpatnam & Residential Land in Telangana",
   description:
-    "AVUTHAPURAM SHIVA REAL ESTATE, founded by Avuthapuram Shiva in Ibrahimpatnam, Janardhan, Telangana, specializes in open plot buying, open plot selling, and residential land advisory.",
+    "AVUTHAPURAM SHIVA REAL ESTATE, founded by Avuthapuram Shiva in Ibrahimpatnam, Janaharsha Dream City, Telangana, specializes in open plot buying, open plot selling, and residential land advisory.",
   alternates: {
     canonical: "/",
   },
@@ -43,9 +43,10 @@ async function FeaturedPropertiesGrid() {
             Sample Development Preview Mode
           </p>
           <p className="mt-1 text-xs leading-relaxed text-[#57534E]">
-            The listings displayed below are clearly marked sample entries for layout and
-            presentation demonstration. They are not live inventory, verified approvals, or
-            quoted offers. Live listings are published through the Admin Dashboard.
+            The listings displayed below are clearly marked sample entries for
+            layout and presentation demonstration. They are not live inventory,
+            verified approvals, or quoted offers. Live listings are published
+            through the Admin Dashboard.
           </p>
         </div>
       )}
@@ -56,8 +57,9 @@ async function FeaturedPropertiesGrid() {
             Verified Inventory Currently Updating
           </p>
           <p className="mx-auto mt-2 max-w-xl text-sm text-[#57534E]">
-            Contact AVUTHAPURAM SHIVA REAL ESTATE directly for current residential open plot opportunities
-            in Ibrahimpatnam and Janardhan, Telangana.
+            Contact AVUTHAPURAM SHIVA REAL ESTATE directly for current
+            residential open plot opportunities in Ibrahimpatnam and Janaharsha
+            Dream City, Telangana.
           </p>
           <Link
             href="/contact"
@@ -101,16 +103,18 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold tracking-[0.26em] text-[#C6A46C] uppercase">
-              AVUTHAPURAM SHIVA REAL ESTATE &bull; Ibrahimpatnam, Janardhan, Telangana
+              AVUTHAPURAM SHIVA REAL ESTATE &bull; Ibrahimpatnam, Janaharsha
+              Dream City, Telangana
             </p>
             <h1 className="mt-5 font-serif text-4xl font-medium leading-[1.08] tracking-tight text-[#FFFFFF] sm:text-6xl lg:text-7xl">
               Discover Your Land. Secure Your Future.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#E7E3DA] sm:text-lg">
-              Founded by {siteConfig.founder}, AVUTHAPURAM SHIVA REAL ESTATE delivers disciplined,
-              transparent guidance for open plot buying, open plot selling, and residential land
-              properties across Ibrahimpatnam, Janardhan, and the broader Hyderabad growth
-              corridor in Telangana.
+              Founded by {siteConfig.founder}, AVUTHAPURAM SHIVA REAL ESTATE
+              delivers disciplined, transparent guidance for open plot buying,
+              open plot selling, and residential land properties across
+              Ibrahimpatnam, Janaharsha Dream City, and the broader Hyderabad
+              growth corridor in Telangana.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -143,8 +147,8 @@ export default function HomePage() {
               Open Plot Buying
             </h2>
             <p className="mt-2 text-sm text-[#57534E]">
-              Dedicated parcel identification, boundary orientation review, and guided site
-              inspections for residential plot buyers.
+              Dedicated parcel identification, boundary orientation review, and
+              guided site inspections for residential plot buyers.
             </p>
           </div>
           <div className="py-8 md:px-8">
@@ -155,8 +159,8 @@ export default function HomePage() {
               Open Plot Selling
             </h2>
             <p className="mt-2 text-sm text-[#57534E]">
-              Structured representation for landowners seeking qualified buyers and clear,
-              documented land transactions.
+              Structured representation for landowners seeking qualified buyers
+              and clear, documented land transactions.
             </p>
           </div>
           <div className="py-8 md:pl-8">
@@ -167,8 +171,8 @@ export default function HomePage() {
               Residential Land Properties
             </h2>
             <p className="mt-2 text-sm text-[#57534E]">
-              Focused advisory across Ibrahimpatnam, Janardhan, and neighboring Telangana
-              residential land markets.
+              Focused advisory across Ibrahimpatnam, Janaharsha Dream City, and
+              neighboring Telangana residential land markets.
             </p>
           </div>
         </div>
@@ -221,8 +225,8 @@ export default function HomePage() {
               Principled Real Estate Advisory Built on Accuracy
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[#57534E] sm:text-base">
-              Buying or selling open residential land requires clarity, physical verification,
-              and local ground knowledge—never exaggerated claims.
+              Buying or selling open residential land requires clarity, physical
+              verification, and local ground knowledge—never exaggerated claims.
             </p>
           </div>
 
@@ -233,19 +237,22 @@ export default function HomePage() {
                 Singular Land Focus
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-[#57534E]">
-                Dedicated exclusively to open plots and residential land properties rather than
-                diluted brokerage categories.
+                Dedicated exclusively to open plots and residential land
+                properties rather than diluted brokerage categories.
               </p>
             </div>
 
             <div className="border border-[#E3DED4] bg-[#F8F7F4] p-6">
-              <FileCheck2 className="h-6 w-6 text-[#8A672E]" aria-hidden="true" />
+              <FileCheck2
+                className="h-6 w-6 text-[#8A672E]"
+                aria-hidden="true"
+              />
               <h3 className="mt-5 font-serif text-xl font-medium text-[#111111]">
                 Fact-First Presentation
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-[#57534E]">
-                Pricing, dimensions, and documentation notes are communicated only when
-                verified and supplied for the parcel.
+                Pricing, dimensions, and documentation notes are communicated
+                only when verified and supplied for the parcel.
               </p>
             </div>
 
@@ -255,19 +262,23 @@ export default function HomePage() {
                 Local Micro-Market Depth
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-[#57534E]">
-                On-the-ground familiarity with Ibrahimpatnam, Janardhan, and emerging
-                residential pockets across Telangana.
+                On-the-ground familiarity with Ibrahimpatnam, Janaharsha Dream
+                City, and emerging residential pockets across Telangana.
               </p>
             </div>
 
             <div className="border border-[#E3DED4] bg-[#F8F7F4] p-6">
-              <ShieldCheck className="h-6 w-6 text-[#8A672E]" aria-hidden="true" />
+              <ShieldCheck
+                className="h-6 w-6 text-[#8A672E]"
+                aria-hidden="true"
+              />
               <h3 className="mt-5 font-serif text-xl font-medium text-[#111111]">
                 Founder Accountability
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-[#57534E]">
-                Direct stewardship under founder {siteConfig.founder}, prioritizing long-term
-                client trust and disciplined site coordination.
+                Direct stewardship under founder {siteConfig.founder},
+                prioritizing long-term client trust and disciplined site
+                coordination.
               </p>
             </div>
           </div>
@@ -314,7 +325,7 @@ export default function HomePage() {
             {
               id: "site-visits",
               title: "Site Visit Coordination",
-              desc: "Scheduled, accompanied on-site walkthroughs in Janardhan and Ibrahimpatnam so buyers can inspect boundaries and surroundings firsthand.",
+              desc: "Scheduled, accompanied on-site walkthroughs in Janaharsha Dream City and Ibrahimpatnam so buyers can inspect boundaries and surroundings firsthand.",
             },
           ].map((service) => (
             <article
@@ -322,11 +333,16 @@ export default function HomePage() {
               className="flex flex-col justify-between border border-[#E3DED4] bg-[#FFFFFF] p-8"
             >
               <div>
-                <Handshake className="h-5 w-5 text-[#8A672E]" aria-hidden="true" />
+                <Handshake
+                  className="h-5 w-5 text-[#8A672E]"
+                  aria-hidden="true"
+                />
                 <h3 className="mt-4 font-serif text-2xl font-medium text-[#111111]">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#57534E]">{service.desc}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#57534E]">
+                  {service.desc}
+                </p>
               </div>
               <Link
                 href={`/services#${service.id}`}
@@ -348,42 +364,53 @@ export default function HomePage() {
               Location Highlights
             </p>
             <h2 className="mt-3 font-serif text-3xl font-medium text-[#FFFFFF] sm:text-4xl">
-              Ibrahimpatnam &amp; Janardhan, Telangana
+              Ibrahimpatnam &amp; Janaharsha Dream City, Telangana
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-[#D4CFC5] sm:text-base">
-              Positioned along the southeastern residential corridor of Hyderabad in Telangana,
-              Ibrahimpatnam and the Janardhan area attract homebuilders and long-term land
-              buyers seeking open residential plots away from dense urban congestion.
+              Positioned along the southeastern residential corridor of
+              Hyderabad in Telangana, Ibrahimpatnam and the Janaharsha Dream
+              City area attract homebuilders and long-term land buyers seeking
+              open residential plots away from dense urban congestion.
             </p>
 
             <ul className="mt-8 space-y-4 border-t border-[#292929] pt-6 text-sm text-[#D4CFC5]">
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]" aria-hidden="true" />
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]"
+                  aria-hidden="true"
+                />
                 <span>
                   <strong className="font-medium text-[#FFFFFF]">
                     AVUTHAPURAM SHIVA Real Estate Ibrahimpatnam:
                   </strong>{" "}
-                  Local presence rooted in Janardhan and Ibrahimpatnam, Telangana.
+                  Local presence rooted in Janaharsha Dream City and
+                  Ibrahimpatnam, Telangana.
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]" aria-hidden="true" />
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]"
+                  aria-hidden="true"
+                />
                 <span>
                   <strong className="font-medium text-[#FFFFFF]">
                     Open Plots in Ibrahimpatnam &amp; Hyderabad Region:
                   </strong>{" "}
-                  Convenient regional road access toward greater Hyderabad residential and
-                  educational zones.
+                  Convenient regional road access toward greater Hyderabad
+                  residential and educational zones.
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]" aria-hidden="true" />
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#C6A46C]"
+                  aria-hidden="true"
+                />
                 <span>
                   <strong className="font-medium text-[#FFFFFF]">
                     Residential Plots in Telangana:
                   </strong>{" "}
-                  Focused on clear-title residential land parcels suitable for future home
-                  construction or long-term land holding.
+                  Focused on clear-title residential land parcels suitable for
+                  future home construction or long-term land holding.
                 </span>
               </li>
             </ul>
@@ -398,7 +425,7 @@ export default function HomePage() {
               </a>
               <a
                 href={getWhatsAppHref(
-                  "Hello AVUTHAPURAM SHIVA REAL ESTATE, I would like to learn about residential plots in Ibrahimpatnam & Janardhan.",
+                  "Hello AVUTHAPURAM SHIVA REAL ESTATE, I would like to learn about residential plots in Ibrahimpatnam & Janaharsha Dream City.",
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

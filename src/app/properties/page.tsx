@@ -7,7 +7,7 @@ import { getPublishedProperties } from "@/lib/data/store";
 export const metadata: Metadata = {
   title: "Open Plots & Residential Land Properties",
   description:
-    "Browse AVUTHAPURAM SHIVA Properties in Ibrahimpatnam, Janardhan, and Telangana. Filter residential open plots by location, dimensions, and availability status.",
+    "Browse AVUTHAPURAM SHIVA Properties in Ibrahimpatnam, Janaharsha Dream City, and Telangana. Filter residential open plots by location, dimensions, and availability status.",
   alternates: {
     canonical: "/properties",
   },
@@ -37,8 +37,8 @@ export default function PropertiesPage() {
             Open Plots in Ibrahimpatnam &amp; Telangana
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#D4CFC5]">
-            Explore residential land parcels curated for long-term ownership. Filter by
-            locality, plot size, and current availability status.
+            Explore residential land parcels curated for long-term ownership.
+            Filter by locality, plot size, and current availability status.
           </p>
         </div>
       </section>
@@ -62,4 +62,3 @@ export default function PropertiesPage() {
     </>
   );
 }
-

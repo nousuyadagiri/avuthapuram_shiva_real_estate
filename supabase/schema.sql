@@ -13,7 +13,7 @@ create table if not exists public.properties (
   title text not null,
   subtitle text not null default '',
   location_area text not null,
-  locality text not null default 'Ibrahimpatnam, Janardhan',
+  locality text not null default 'Ibrahimpatnam, Janaharsha Dream City',
   state text not null default 'Telangana',
   property_type text not null default 'Residential Open Plot',
   plot_dimensions text not null,
