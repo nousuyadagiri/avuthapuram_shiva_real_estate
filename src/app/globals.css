@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-black: #111111;
+  --color-white: #ffffff;
+  --color-gold: #c6a46c;
+  --color-gold-accessible: #8a672e;
+  --color-ivory: #f8f7f4;
+  --color-charcoal: #292929;
+  --color-border: #e3ded4;
+  --color-muted: #57534e;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-black: var(--color-black);
+  --color-brand-white: var(--color-white);
+  --color-brand-gold: var(--color-gold);
+  --color-brand-gold-text: var(--color-gold-accessible);
+  --color-brand-ivory: var(--color-ivory);
+  --color-brand-charcoal: var(--color-charcoal);
+  --color-brand-border: var(--color-border);
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-black);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* High-contrast accessible focus indicator */
+:where(a:any-link, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Visually hidden utility (preserves accessibility tree & reveals on focus for skip links) */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Modern post-interaction form validation (:user-invalid with fallback class) */
+.form-field-control {
+  font: inherit;
+  font-size: max(1rem, 1em);
+  min-height: 48px;
+}
+
+.form-field-control:is(:user-invalid, .user-invalid-fallback) {
+  border-color: #b91c1c;
+  background-color: #fef2f2;
+}
+
+.form-field-control:is(:user-valid, .user-valid-fallback) {
+  border-color: #166534;
+}
+
+.field-error-message {
+  display: none;
+}
+
+.form-field-control:is(:user-invalid, .user-invalid-fallback) + .field-error-message,
+.field-error-message[data-visible="true"] {
+  display: flex;
+}
+
+/* Native <dialog> scroll-snap mobile navigation drawer */
+.as-drawer {
+  --drawer-width: min(22rem, 85dvw, 100dvw - 24px);
+  --drawer-backdrop: 0;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+
+.as-drawer::backdrop {
+  background: #111111;
+  opacity: calc(var(--drawer-backdrop) * 0.65);
+}
+
+.as-drawer-scroller {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100% var(--drawer-width);
+  overflow-x: scroll;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.as-drawer-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .as-drawer-scroller {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Closed stop spacer on the left so the right-side drawer slides in smoothly */
+.as-drawer-scroller::before {
+  content: "";
+  scroll-snap-align: start;
+  scroll-initial-target: nearest;
+}
+
+.as-drawer-sheet {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100svh;
+  background-color: #111111;
+  color: #ffffff;
+  overflow-y: auto;
+  scroll-snap-align: end;
+  scrollbar-width: none;
+  border-inline-start: 1px solid #292929;
+}
+
+@supports (animation-timeline: scroll()) {
+  .as-drawer {
+    timeline-scope: --as-drawer-fade;
+    animation: as-fade-drawer-backdrop linear both;
+    animation-timeline: --as-drawer-fade;
+  }
+
+  .as-drawer-scroller {
+    scroll-timeline: --as-drawer-fade x;
+  }
+
+  @property --drawer-backdrop {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  @keyframes as-fade-drawer-backdrop {
+    0% {
+      --drawer-backdrop: 0;
+    }
+    100% {
+      --drawer-backdrop: 1;
+    }
+  }
 }
